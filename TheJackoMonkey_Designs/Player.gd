@@ -1,8 +1,8 @@
 extends KinematicBody2D
 
-var speed := 500;
+var speed := 300;
 var gravity := 2000;
-var jump := 900;
+var jump := 700;
 
 var velocity := Vector2.ZERO;
 var motion = Vector2();
