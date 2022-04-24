@@ -44,9 +44,6 @@ __meta__ = {
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Spike"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Spike/StaticBody2D"]
-shape = SubResource( 1 )
-
 [node name="Pipe1" type="Sprite" parent="."]
 position = Vector2( 128, 0 )
 texture = ExtResource( 1 )

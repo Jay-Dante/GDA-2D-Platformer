@@ -1,8 +1,8 @@
 extends KinematicBody2D
 
-var speed := 300;
-var gravity := 2000;
-var jump := 700;
+export var speed := 300;
+export var gravity := 2000;
+export var jump := 700;
 
 var velocity := Vector2.ZERO;
 var motion = Vector2();
@@ -35,6 +35,14 @@ func _physics_process(delta):
 			velocity.y += -jump; # applies jump force in relation to y axis
 		elif !is_on_floor():
 			$AnimationPlayer.play("Jump"); # plays jump animation
+	
+	if Input.is_action_just_released("restart"):
+		get_tree().change_scene("res://Scenes/Main.tscn");
 		
 	velocity = move_and_slide(velocity, Vector2.UP);
 
+
+
+func _on_Killzone_body_entered(body):
+	
+	get_tree().change_scene("res://Scenes/Main.tscn");
